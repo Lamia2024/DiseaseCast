@@ -11,8 +11,7 @@ openai.api_key = "sk-6s-qXvBwc8_nmlAOGoa4jtTMI1MpuwTxg9x-er_AZTT3BlbkFJzqc7jwmI7
 # Function to generate chatbot response using OpenAI's GPT
 def generate_response(user_input):
     # Initialize session state for chat history if not already set
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = []
+    
     try:
         # Use gpt-3.5-turbo instead of gpt-4
         response = openai.ChatCompletion.create(
@@ -29,6 +28,8 @@ def generate_response(user_input):
 
 # Function to render the home page
 def show_home_page():
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
     st.title("Welcome to the Health Prediction App")
     st.write("Explore various health prediction tools and resources.")
     
