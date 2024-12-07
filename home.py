@@ -6,7 +6,8 @@ import openai
 openai.api_key = "sk-6s-qXvBwc8_nmlAOGoa4jtTMI1MpuwTxg9x-er_AZTT3BlbkFJzqc7jwmI7oXpJ_ZuZnjpex4eR60okl_5Xc8kgsC-0A"
 # Initialize session state for chat history if not already set
 if "chat_history" not in st.session_state:
-    st.session_state["chat_history"] = []
+    st.session_state.chat_history = []
+
 
 # Function to generate chatbot response using OpenAI's GPT
 def generate_response(user_input):
